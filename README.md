@@ -9,6 +9,8 @@ npm install body-parser cookie-parser debug ejs express morgan npm install body-
 - 创建服务
 - 跑通路由
 
+###模板引擎
+-写模板并用bootstrap渲染
 
 
 
