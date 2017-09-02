@@ -18,5 +18,15 @@ router.post('/add',checkLogin,function (req,res) {
             }
         })
 });
-
+router.get('/detail/:_id',function (req,res) {//_id是路径参数
+    let _id = req.params._id;
+    Article.findById(_id,function (err,article) {
+        if(err){
+            req.flash('error',err);
+            res.redirect('back');
+        }else{
+            res.render('article/detail',{title:'文章详情',article});
+        }
+    });
+});
 module.exports = router;

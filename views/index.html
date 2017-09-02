@@ -1,3 +1,32 @@
 <%- include include/header.html%>
-首页
+
+<%articles.forEach(function(article){%>
+<%
+console.log(typeof article.user);
+%>
+<style>
+    img{
+        width: 50px;
+        height:50px;
+        border-radius: 50%;
+    }
+</style>
+    <div class="media">
+        <div class="media-left">
+            <a href="">
+                <img src="<%=article.user.avatar%>" alt="<%=article.user.username%>" class="media-object">
+            </a>
+        </div>
+        <div class="media-body">
+            <h3 class="media-heading">
+                <a href="/article/detail/<%=article._id%>">
+                    <%=article.title%>
+                </a>
+            </h3>
+            <p><%=article.content%></p>
+            <p>发表时间:<%=article.createAt.toLocaleString()%>|作者:<%=article.user.username%></p>
+        </div>
+    </div>
+<%});%>
+
 <%- include include/footer.html%>
