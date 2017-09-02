@@ -24,6 +24,9 @@ npm install body-parser cookie-parser debug ejs express morgan npm install body-
 ### 实现会话改变显示的功能
 ### 实现退出功能
 ### 实现路由权限判断
+### 交互优化
+- 注册成功失败的提示
+
 
 
 

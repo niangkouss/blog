@@ -3,6 +3,7 @@ let express = require('express');
 let path = require('path');
 let bodyParser = require('body-parser');
 let session = require('express-session');
+let flash = require('connect-flash');
 let app = express();
 app.set('view engine','html');
 app.set('views',path.resolve('views'));
@@ -14,11 +15,14 @@ app.use(session({
     secret:'mySecret',
     saveUninitialized:true
 }));
+app.use(flash());
 let index = require('./routes/index');
 let user = require('./routes/users');
 let article = require('./routes/article');
 app.use(function (req,res,next) {
     res.locals.user = req.session.user;
+    res.locals.success = req.flash('success').toString();
+    res.locals.error = req.flash('error').toString();
     next();
 });
 app.use('/',index);

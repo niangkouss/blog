@@ -28,3 +28,15 @@
     </div>
 </nav>
 <div class="container">
+
+    <%if(success){%>
+    <div class="alert alert-danger">
+        <%=success%>
+    </div>
+    <%}%>
+
+    <%if(error){%>
+    <div class="alert alert-success">
+        <%=error%>
+    </div>
+    <%}%>
