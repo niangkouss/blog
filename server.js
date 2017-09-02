@@ -10,6 +10,7 @@ app.set('views',path.resolve('views'));
 app.engine('html',require('ejs').__express);
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.resolve('node_modules')));
+app.use(express.static(path.resolve('public')));
 app.use(session({
     resave:true,
     secret:'mySecret',

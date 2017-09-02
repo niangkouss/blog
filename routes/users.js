@@ -2,11 +2,14 @@ let express = require('express');
 let router = express.Router();
 let {UserModel} = require('../model');
 let {checNotkLogin,checkLogin} = require('../auth');
+let multer = require('multer');
+let uploads = multer({dest:'public/uploads'});
 router.get('/signup',checNotkLogin,function (req,res) {
     res.render('user/signup',{title:'注册'});
 });
-router.post('/signup',checNotkLogin,function (req,res) {
+router.post('/signup',uploads.single('avatar'),checNotkLogin,function (req,res) {
     let user = req.body;
+    user.avatar = `/uploads/${req.file.filename}`;
     UserModel.create(user,function (err,doc) {
         if(err){
             req.flash('error','用户注册失败');

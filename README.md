@@ -26,6 +26,7 @@ npm install body-parser cookie-parser debug ejs express morgan npm install body-
 ### 实现路由权限判断
 ### 交互优化
 - 注册成功失败的提示
+### 上传头像功能
 
 
 

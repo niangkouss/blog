@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
+<style>
+    .avatar{
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        margin-right:30px;
+        border-radius: 50%;
+    }
+</style>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -24,6 +33,16 @@
                 <li><a href="/user/signin">登录</a></li>
                 <%}%>
             </ul>
+            <%if(user){%>
+            <ul  class="nav navbar-nav nav-right pull-right">
+                <li>
+                    <a href="">
+                        <img src="<%=user.avatar%>" alt="" class="avatar">
+                        <span><%=user.username%></span>
+                    </a>
+                </li>
+            </ul>
+            <%}%>
         </div>
     </div>
 </nav>
