@@ -30,6 +30,7 @@ npm install body-parser cookie-parser debug ejs express morgan npm install body-
 ### 实现发表文章功能
 ### 实现显示文章列表功能
 ### 实现文章详情页功能
+### 实现删除文章功能
 
 
 

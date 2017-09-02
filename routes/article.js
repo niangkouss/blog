@@ -29,4 +29,16 @@ router.get('/detail/:_id',function (req,res) {//_id是路径参数
         }
     });
 });
+router.get('/delete/:id',function (req,res) {
+    let _id = req.params._id;
+    Article.remove({_id},function (err,result) {
+        if(err){
+            req.flash('error',err);
+            res.redirect('back');
+        }else{
+            req.flash('success','删除文章成功');
+            res.redirect('/');
+        }
+    });
+});
 module.exports = router;
