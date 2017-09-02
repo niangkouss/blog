@@ -21,7 +21,9 @@ npm install body-parser cookie-parser debug ejs express morgan npm install body-
 - 保存完毕之后跳转到登录页
 
 ### 实现登录功能
-### 实现会话功能
+### 实现会话改变显示的功能
+### 实现退出功能
+### 实现路由权限判断
 
 
 
